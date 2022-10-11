@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/* Root */
+
+:root {
+    --primary: rgb(112, 68, 255);
+    --label: rgb(91, 91, 91);
+    --placeholder: rgb(158, 158, 158);
+    --main-Color: rgba(0, 0, 0, 0.88);
+    --step-Color: rgb(223, 223, 223)
+}
+
+
+
+
+/* top */
+.top {
+    padding: 1rem;
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top h4 {
+    font-size: 3rem;
+    color: var(--main-Color);
+}
+
+.top h4 i {
+    font-size: 3rem;
+    margin-right: .5rem;
+    color: var(--primary);
+}
+
+
+
+
+/* --------------------------------------------------------
+            F O R M    S E C T I O N  --> 1
+-----------------------------------------------------------*/
+
+/* Section */
+section {
+    height: 77vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+
+section h4 {
+    font-size: 3.4rem;
+    color: var(--main-Color);
+}
+
+
+
+section p {
+    font-size: 1.7rem;
+    margin: 2rem 0rem;
+    color: grey;
+    margin-bottom: 8rem;
+}
+
+
+section form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+section form input::placeholder {
+    color: var(--placeholder);
+}
+
+
+section form button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Label */
+
+.label {
+    /* border: 2px solid red; */
+    padding-bottom: 1rem;
+    text-align: left;
+}
+
+.label h5 {
+    color: var(--label);
+    font-size: 1.5rem;
+}
+
+#optional {
+    color: rgb(171, 171, 171);
+    font-size: 1.1rem;
+}
+
+
+
+
+/* --------------------------------------------------------
+            F O R M    S E C T I O N  --> 2
+-----------------------------------------------------------*/
+
+
+section form input,
+button,
+#workspace-placeholder {
+    width: 45vh;
+    padding: 1.5rem 1rem;
+    border-radius: 4px;
+    border: .5px solid rgb(221, 221, 221);
+    font-size: 1.5rem;
+    margin: 4rem 0rem;
+    margin-top: 0;
+    outline: none;
+}
+
+#workspace-placeholder {
+    width: 15vh;
+    color: var(--placeholder);
+    background-color: rgb(244, 244, 244);
+}
+
+#workspace-input {
+    width: 29.5vh;
+}
+
+
+
+
+/* --------------------------------------------------------
+            F O R M    S E C T I O N  --> 3
+-----------------------------------------------------------*/
+
+
+.choose-box {
+    margin-bottom: 4rem;
+    width: 45vh;
+    text-align: left;
+    display: grid;
+    gap: 8%;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.choose-box i {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--label);
+}
+
+.choose-box h4 {
+    font-size: 2rem;
+    margin: 1rem 0rem;
+}
+
+
+.choose-para {
+    font-size: 1.5rem;
+    margin: 0rem;
+    margin-bottom: 0rem;
+}
+
+
+.set-padding {
+    padding: 2.5rem;
+    border: 1px solid rgb(181, 181, 181);
+    border-radius: 7px;
+}
+
+.myself,
+.my-team {
+    cursor: pointer;
+}
+
+
+.active-box {
+    border: 1px solid var(--primary);
+}
+
+.active-box i {
+    color: var(--primary);
+}
+
+
+
+/* --------------------------------------------------------
+            F O R M    S E C T I O N  --> 4
+-----------------------------------------------------------*/
+
+
+#section4 p {
+    margin: 4.5rem 0rem;
+}
+
+#section4 i {
+    font-size: 7rem;
+    margin-bottom: 8rem;
+    color: var(--primary);
+}
+
+
+
+
+
