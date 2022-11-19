@@ -6,11 +6,16 @@ import addImg from '../../images/add.png'
 import './panel.css'
 import Nav from '../Nav/Nav'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 
 const Panel = () => {
 
-  
+  useEffect(() => {
+    document.title = 'Dashboard';
+  }, []);
+
+
 
 
   const navigate = useNavigate()
