@@ -11,7 +11,7 @@ const Add = () => {
 
     useEffect(() => {
         document.title = 'Add';
-      }, []);
+    }, []);
 
     const [tags, setTags] = useState([])
 
@@ -48,9 +48,11 @@ const Add = () => {
 
 
     const handleTags = (e) => {
-        if (e.keyCode === 13 || e.keyCode === 32) {
-            setTags([...tags, e.target.value])
-            e.target.value = ''
+        if (e.target.value !== '') {
+            if (e.keyCode === 13) {
+                setTags([...tags, e.target.value])
+                e.target.value = ''
+            }
         }
     }
 
