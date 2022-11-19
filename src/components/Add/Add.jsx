@@ -1,23 +1,31 @@
 import React from 'react'
 import './add.css'
 import Nav from '../Nav/Nav'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
 import addFormSchema from '../../formSchema/data'
 
 
 const Add = () => {
 
+
+    useEffect(() => {
+        document.title = 'Add';
+      }, []);
+
     const [tags, setTags] = useState([])
 
     const [imgLogo, setImgLogo] = useState(null)
+
+
+
 
 
     // Formik
     const [initialValues, setInitialValues] = useState({ //eslint-disable-line
         companyName: '',
         jobTitle: '',
-        type: 'Job',
+        type: 'Full Time',
         location: '',
         duration: '',
         startDate: '',
@@ -28,18 +36,18 @@ const Add = () => {
 
     // Formik
 
-    const { values, handleSubmit, handleChange } = useFormik({
+    const { values, handleSubmit, handleChange, errors, touched } = useFormik({
         initialValues,
         enableReinitialize: true,
         validationSchema: addFormSchema,
         onSubmit: () => {
-            let finalData = [values, imgLogo, {tags}]
+            let finalData = [{ ...values, ...imgLogo, ...{ tags } }]
             sendData(finalData);
         }
     })
 
 
-    const checkKeyCode = (e) => {
+    const handleTags = (e) => {
         if (e.keyCode === 13) {
             setTags([...tags, e.target.value])
             e.target.value = ''
@@ -60,9 +68,59 @@ const Add = () => {
 
 
 
+
     const sendData = (finalValues) => {
         console.log(finalValues)
     }
+
+
+
+
+    // Form List
+    const formList = [
+        {
+            key: 1,
+            label: 'Company Name',
+            Error: 'Error',
+            name: 'companyName'
+
+        },
+        {
+            key: 2,
+            label: 'Job Title',
+            Error: 'Error',
+            name: 'jobTitle'
+        },
+        {
+            key: 3,
+            label: 'Location',
+            Error: 'Error',
+            name: 'location'
+        }, {
+            key: 4,
+            label: 'Duration',
+            Error: 'Error',
+            name: 'duration'
+        }, {
+            key: 5,
+            label: 'Start Date',
+            Error: 'Error',
+            name: 'startDate'
+        }, {
+            key: 6,
+            label: `${values.type === 'Internship' ? 'Stipend' : 'Salary'}`,
+            Error: 'Error',
+            name: 'expectedSalary'
+        }, {
+            key: 7,
+            label: 'Portal Link',
+            Error: 'Error',
+            name: 'portalLink'
+        },
+    ]
+
+
+
 
 
 
@@ -73,74 +131,55 @@ const Add = () => {
                 <Nav position='Home' />
 
                 {/* Form */}
-                <div className="container form-container">
-                    <div className="row input-container text-center p-3">
-                        <form onSubmit={handleSubmit}>
-                            <div className="col-12 col-md-4  mb-5 mb-md-5 d-flex justify-content-center align-item-center">
-                                <label className='companyLogo my-auto' htmlFor="companyLogo"><i className="fa-sharp  fa-solid fa-link"></i> Choose Company Logo</label>
-                                <input type="file" onChange={logoHandler} name='companyLogo' id='companyLogo' hidden accept='image/*' className='input-field' placeholder='Company Logo' />
-                                <div className="row">
-                                    <div className="col-12 logoDiv">
-                                        {imgLogo ? <img src={imgLogo.profileImg} alt="companyLogo" /> : null}
-                                    </div>
-                                </div>
+                <div className="row mt-5">
+                    <div className="col-12 companyLogo text-center w-100 mb-5 d-flex flex-column col-md-4">
+                        <label htmlFor="companyLogo" className='d-flex justify-content-center align-item-center'><i className="mt-1 me-1 fa-solid fa-link"></i>Choose Company Logo</label>
+                        <input type="file" onChange={logoHandler} id='companyLogo' hidden accept='image/*' />
+                        {imgLogo ? <img className='logo mt-3' src={imgLogo.profileImg} alt="Logo" /> : null}
+                    </div>
 
-                            </div>
-                            <div className="col-12 col-md-4 mb-5">
-                                <input type="text" name='companyName' onChange={handleChange} className='input-field' placeholder='Company Name' />
-                            </div>
-                            <div className="col-12 col-md-4 mb-5">
-                                <input type="text" name='jobTitle' onChange={handleChange} className='input-field' placeholder='Job Title' />
-                            </div>
-                            <div className="col-12 col-md-4 mb-5 mb-md-5">
-                                <select onChange={handleChange} name='type' className='input-field type-field w-50 '>
-                                    <option style={{ color: 'white', backgroundColor: 'black' }} value="Job">Job</option>
-                                    <option style={{ color: 'white', backgroundColor: 'black' }} value="Internship">Internship</option>
-                                </select>
-                            </div>
+                    <div className="col-12  mb-5 d-flex flex-column col-md-4">
+                        <label htmlFor="jobType" >Type</label>
+                        <select id='jobType' name='type' onChange={handleChange} className='mt-1 jobType'>
+                            <option value="Full Time">Full Time</option>
+                            <option value="Internship">Internship</option>
+                        </select>
+                        {errors.type && touched.type ? <span className='error mt-1'>{errors.type}</span> : null}
+                    </div>
 
-                            <div className="col-12 col-md-4 mb-5">
-                                <input type="text" className='input-field' onKeyUp={checkKeyCode} placeholder='Tech Tags' />
-                                <div className="row mt-4">
-                                    <div className="col-12 tagName">
-                                        <span className={`${tags.length !== 0 ? 'tagData' : null}`}>{tags.map((item, key) => {
-                                            return <small key={key}>{item + ' '}</small>
-                                        })}</span>
-                                    </div>
 
-                                </div>
-
-                            </div>
-                            <div className="col-12 col-md-4 mb-5">
-                                <input type="text" name='location' onChange={handleChange} className='input-field' placeholder='Location' />
-                            </div>
-                            <div className="col-12 col-md-4 mb-5 mb-md-5">
-                                <input type="text" name='duration' onChange={handleChange} className='input-field' placeholder='Duration (Month)' />
-                            </div>
-
-                            <div className="col-12 col-md-4 mb-5">
-                                <input type="text" name='startDate' onChange={handleChange} className='input-field' placeholder='Start Date' />
-                            </div>
-                            <div className="col-12 col-md-4 mb-5">
-                                <input type="text" name='expectedSalary' onChange={handleChange} className='input-field' placeholder={`Expected ${values.type === 'Job' ? 'Salary' : 'Stipend'} `} />
-                            </div>
-
-                            <div className="col-12 col-md-4 mb-5 mb-md-5">
-                                <input type="text" name='portalLink' onChange={handleChange} className='input-field' placeholder='Portal Link' />
-                            </div>
-
-                            <div className="col-12 mb-3">
-                                <textarea placeholder='Job Description' onChange={handleChange} name='jobDescription' className='w-75 p-2 textarea ' cols="30" rows="10"></textarea>
-                            </div>
-
+                    <div className="col-12  mb-5 d-flex flex-column col-md-4">
+                        <label htmlFor="techTags">Tech Tags</label>
+                        <input type="text" onKeyUp={handleTags} className='input-field' />
+                        <div className="row">
                             <div className="col-12">
-                                <button type='submit' className='submit-btn'>Submit</button>
+                                {tags ? <small style={{ textTransform: 'uppercase' }}>{tags + ' '}</small> : null}
                             </div>
-                        </form>
+                        </div>
+                    </div>
+
+                    {formList.map(({ key, name, label }) => {
+
+                        return (
+                            <div key={key} className="col-12 mb-5 d-flex flex-column col-md-4">
+                                <small className='companyLabel'>{label}</small>
+                                <input name={name} onChange={handleChange} className='input-field' type="text" />
+                                <span className='error mt-1'>{name === 'companyName' && touched.companyName ? errors.companyName : (name === 'jobTitle' && touched.jobTitle ? errors.jobTitle : (name === 'location' && touched.location ? errors.location : (name === 'duration' && touched.duration ? errors.duration : (name === 'startDate' && touched.startDate ? errors.startDate : (name === 'expectedSalary' && touched.expectedSalary ? errors.expectedSalary : (name === 'portalLink' && touched.portalLink ? errors.portalLink : null))))))}</span>
+                            </div>
+                        )
+                    })}
+
+                    <div className="col-12  text-center">
+                        <textarea cols="30" name='jobDescription' onChange={handleChange} placeholder='Job Description' className='w-50 mb-3 jobDescription' rows="10"></textarea>
+                    </div>
+                    <div className="col-12 text-center">
+                        <button type='submit' onClick={handleSubmit} className='w-25 submit-btn mx-auto'>Submit</button>
                     </div>
                 </div>
+
+
             </div>
-        </div>
+        </div >
     )
 }
 
