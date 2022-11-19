@@ -1,0 +1,125 @@
+.add-container {
+    min-height: 100vh;
+    background-color: black;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.form-container {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input-container {
+    min-height: 85vh;
+    border-radius: 10px;
+    background-color: rgba(174, 174, 174, 0.061);
+    box-shadow: rgba(0, 0, 0, 0.129) 0px 0px 10px;
+}
+
+
+.textarea {
+    background-color: transparent;
+    border-radius: 4px;
+    border: .5px solid var(--primary);
+    outline: none;
+    color: white;
+}
+
+
+.submit-btn {
+    background-color: var(--primary);
+    padding: .5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: .3s;
+    border: none;
+    width: 13%;
+}
+
+
+.submit-btn:hover {
+    transition: .3s;
+    background-color: var(--transition);
+}
+
+
+.jobtype {
+    background-color: rgba(174, 174, 174, 0.061) !important;
+    color: black;
+}
+
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    right: -2%;
+    margin-top: -13%;
+    position: absolute;
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+}
+
+.companyLogo {
+    color: white;
+    transition: .3s;
+    cursor: pointer;
+    font-size: .9rem;
+    border: .5px solid var(--primary);
+    padding: .4rem;
+    border-radius: 4px;
+}
+
+.companyLogo:hover {
+    background-color: var(--primary);
+    transition: .3s;
+    color: black;
+    font-weight: bold;
+}
+
+
+.error{
+    border: 2px solid red;
+    
+}
+
+
+.tagData{
+    background-color: var(--primary);
+    color: black;
+    font-weight: bold;
+    padding: .2rem .3rem;
+    border-radius: 4px;
+}
+
+.logoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoDiv img{
+    width: 5rem;
+    margin-left: 1rem;
+}
+
+
+@media (min-width:320px) and (max-width:768px) {
+    .submit-btn {
+        width: 100% !important;
+    }
+
+    .textarea {
+        width: 100% !important;
+    }
+
+    .type-field{
+        width: 80% !important;
+    }
+}

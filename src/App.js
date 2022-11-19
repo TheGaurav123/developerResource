@@ -1,9 +1,16 @@
-import Form from "./components/Form/Form";
-import './App.css'
+import "./App.css";
+import Panel from "./components/Panel/Panel";
+import Add from "./components/Add/Add";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <Form />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Panel />} />
+          <Route path="/add" element={<Add />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

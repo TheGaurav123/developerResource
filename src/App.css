@@ -1,180 +1,47 @@
-/* --------------------------------------------
-            M E D I A   Q U E R Y
------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-@media (min-width:320px) and (max-width:480px) {
-    html {
-        font-size: 45%;
-    }
-
-    section form input,
-    button,
-    #workspace-placeholder {
-        width: 30vh;
-        padding: 1.5rem 1rem;
-        border-radius: 4px;
-        border: .5px solid rgb(221, 221, 221);
-        font-size: 1.5rem;
-        margin: 10rem 0rem;
-        margin-top: 0;
-        outline: none;
-    }
-
-    #workspace-placeholder {
-        width: 10vh;
-        color: var(--placeholder);
-        background-color: rgb(244, 244, 244);
-    }
-
-    #workspace-input {
-        width: 17.5vh;
-    }
-
-    .progress-bar ul {
-        list-style: none;
-        display: flex;
-        font-size: 2rem;
-        width: 60%;
-        justify-content: space-evenly;
-    }
-
-    .choose-box {
-        margin-bottom: 4rem;
-        width: 30vh;
-        text-align: left;
-        display: grid;
-        gap: 8%;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 
-
-/* For IPads */
-
-@media (min-width:481px) and (max-width:768px) {
-    html {
-        font-size: 55%;
-    }
-
-    .progress-bar ul {
-        list-style: none;
-        display: flex;
-        font-size: 2rem;
-        width: 50%;
-        justify-content: space-evenly;
-    }
-
-    .progress-bar ul li::after {
-        content: '';
-        background-color: rgb(220, 220, 220);
-        height: .2rem;
-        width: 11.5rem;
-        position: absolute;
-        z-index: -2;
-    }
-
-    .progress-bar ul li:last-child::after {
-        content: '';
-        background-color: rgb(220, 220, 220);
-        height: .2rem;
-        width: 5rem;
-        margin-right: 5rem;
-        position: absolute;
-    }
-
-    .step-2::before {
-        content: '';
-        background-color: var(--primary);
-        height: .2rem;
-        width: 12rem;
-        position: absolute;
-        z-index: -1;
-    }
-
-    .step-3::before {
-        content: '';
-        background-color: var(--primary);
-        height: .2rem;
-        width: 14rem;
-        position: absolute;
-        z-index: -1;
-
-    }
+:root {
+    --primary: #FFB9B9;
+    --transition: #ff9999;
 }
 
 
-@media (min-width:769px) and (max-width:1024px) {
-    html {
-        font-size: 56%;
-    }
+.button{
+    padding: .2rem .5rem;
+    font-size: .8rem;
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+    border: .5px solid var(--primary);
+    transition: .3s;
+}
 
-    .progress-bar ul {
-        list-style: none;
-        display: flex;
-        font-size: 2rem;
-        width: 32%;
-        justify-content: space-evenly;
-    }
-
-    
+.button:hover{
+    color: black;
+    transition: .3s;
+    background-color: var(--primary);
 }
 
 
-@media (min-width:1025px) and (max-width:1200px) {
-    html {
-        font-size: 60%;
-    }
-
-    .progress-bar ul {
-        list-style: none;
-        display: flex;
-        font-size: 2rem;
-        width: 30%;
-        justify-content: space-evenly;
-    }
+.input-field{
+    padding: .3rem .4rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: .5px solid var(--primary);
+    outline: none;
 }
 
-
-@media(min-width:1201px) and (max-width:1800px) {
-    html {
-        font-size: 70%;
-    }
-
-    .progress-bar ul {
-        list-style: none;
-        display: flex;
-        font-size: 2rem;
-        width: 27%;
-        justify-content: space-evenly;
-    }
-}
-
-@media (min-width:1801px) and (max-width:1999px) {
-    html {
-        font-size: 60%;
-    }
-
-    .progress-bar ul {
-        list-style: none;
-        display: flex;
-        font-size: 2rem;
-        width: 20%;
-        justify-content: space-evenly;
-    }
-}
-
-@media (min-width:2000px) and (max-width:2560px){
-    html {
-        font-size: 62.5%;
-    }
-
-    .progress-bar ul {
-        list-style: none;
-        display: flex;
-        font-size: 2rem;
-        width: 19%;
-        justify-content: space-evenly;
-    }
+.input-field::placeholder{
+    color: rgba(255, 255, 255, 0.664);
+    /* font-weight: bold; */
+    font-size: .8rem;
 }
