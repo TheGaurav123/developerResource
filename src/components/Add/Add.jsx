@@ -60,7 +60,7 @@ const Add = () => {
 
     // Logo Handler
     const logoHandler = (e) => {
-        const reader = new FileReader()
+        const reader = new FileReader()``
         reader.onload = () => {
             if (reader.readyState === 2) {
                 setImgLogo({ profileImg: reader.result })
