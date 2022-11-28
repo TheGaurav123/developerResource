@@ -50,7 +50,7 @@ const Add = () => {
     const handleTags = (e) => {
  
         if (e.target.value !== '') {
-            if (e.keyCode === 49) {
+            if (e.keyCode === 13) {
                 setTags([...tags, e.target.value])
                 e.target.value = ''
             }
