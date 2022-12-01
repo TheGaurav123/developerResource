@@ -48,7 +48,7 @@ const Add = () => {
 
 
     const handleTags = (e) => {
- 
+
         if (e.target.value !== '') {
             if (e.keyCode === 13) {
                 setTags([...tags, e.target.value])
@@ -58,17 +58,23 @@ const Add = () => {
     }
 
 
+
     // Logo Handler
     const logoHandler = (e) => {
-        const reader = new FileReader()``
+        const reader = new FileReader()
         reader.onload = () => {
             if (reader.readyState === 2) {
-                setImgLogo({ profileImg: reader.result })
+                if (e.target.files[0].size / 1000 < 150) {
+                    setImgLogo({ profileImg: reader.result })
+                }
+                else{
+                    alert('Image size should be less than 150KB')
+                }
             }
         }
         reader.readAsDataURL(e.target.files[0])
-    }
 
+    }
 
 
 
@@ -101,7 +107,7 @@ const Add = () => {
             name: 'location'
         }, {
             key: 4,
-            label: 'Duration',
+            label: 'Duration (Months)',
             Error: 'Error',
             name: 'duration'
         }, {
