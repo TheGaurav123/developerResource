@@ -19,7 +19,6 @@
 - [@TheGaurav](https://github.com/TheGaurav123)
 - [@Abhishek Rawe](https://github.com/abhishekrawe)
 - [@Aman ](https://github.com/Lord-Aman)
-- [@Abhishek Rawe](https://github.com/abhishekrawe)
 - [@Priya](https://github.com/priya0220)
 
 
