@@ -58,7 +58,7 @@ Start the server
   npm start
 ```
 
-
+## Screenshots
 ![App Screenshot](https://raw.githubusercontent.com/TheGaurav123/developerResource/main/src/drPic.jpeg)
 
 ## Tech Stack
@@ -70,5 +70,5 @@ Start the server
 **Server:** Node, Express
 
 **DB:** MongoDB
-## Screenshots
+
 
