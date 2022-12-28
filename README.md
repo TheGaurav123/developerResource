@@ -59,6 +59,8 @@ Start the server
 ```
 
 
+![App Screenshot](https://raw.githubusercontent.com/TheGaurav123/developerResource/main/src/drPic.jpeg)
+
 ## Tech Stack
 
 **Client:** React, JavaScript, Bootstrap, CSS
@@ -70,4 +72,3 @@ Start the server
 **DB:** MongoDB
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/TheGaurav123/developerResource/main/src/drPic.jpeg)
