@@ -12,14 +12,20 @@
 * Also something great is in the pipeline so wait...
 
 
-
-
 ## Authors
 
 - [@TheGaurav](https://github.com/TheGaurav123)
 - [@Abhishek Rawe](https://github.com/abhishekrawe)
 - [@Aman ](https://github.com/Lord-Aman)
 - [@Priya](https://github.com/priya0220)
+
+
+
+## Features
+
+- Job/Internships Listing
+- Community Chat Support
+- Roadmaps For Learning
 
 
 ## Demo
@@ -63,11 +69,3 @@ Start the server
 ## Screenshots
 
 ![App Screenshot](https://raw.githubusercontent.com/TheGaurav123/developerResource/main/src/drPic.jpeg)
-
-
-## Features
-
-- Job/Internships Listing
-- Community Chat
-- Roadmaps For Learning
-
