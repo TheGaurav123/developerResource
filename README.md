@@ -22,8 +22,6 @@
 - [@Priya](https://github.com/priya0220)
 
 
-
-
 ## Demo
 
 https://developerresource.netlify.app/
@@ -62,3 +60,14 @@ Start the server
 **Server:** Node, Express
 
 **DB:** MongoDB
+## Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/TheGaurav123/developerResource/main/src/drPic.jpeg)
+
+
+## Features
+
+- Job/Internships Listing
+- Community Chat
+- Roadmaps For Learning
+
