@@ -63,6 +63,8 @@ Start the server
 
 **Client:** React, JavaScript, Bootstrap, CSS
 
+**Design Tools:** Figma, Canva
+
 **Server:** Node, Express
 
 **DB:** MongoDB
